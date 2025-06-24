@@ -1,0 +1,20 @@
+{%extends "base.html"%}
+{% block start%}
+    <h1>Task List</h1>
+
+    {% if tasks %}
+    <ul>
+        {% for task in tasks %}
+        <li>
+            Task Name :<strong><a href="{% url 'details' task.id %}">{{ task.name }}</a></strong><br>
+            Due: {{ task.due_date }}<br>
+          
+        </li>
+        
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No tasks available.</p>
+    {% endif %}
+
+ {% endblock %}

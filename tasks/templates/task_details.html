@@ -1,0 +1,21 @@
+{%extends "base.html"%}
+{% block start%}
+  <h1>Task Details</h1>
+
+  <p><strong>Task Name:</strong> {{ task.name }}</p>
+
+  <p><strong>Description:</strong> {{ task.description }}</p>
+
+  <p><strong>Due Date:</strong> {{ task.due_date }}</p>
+
+  <p><strong>Status:</strong>
+    {% if task.is_done %}
+      ✅ Done
+    {% else %}
+      ⏳ Pending
+    {% endif %}
+  </p>
+
+  <p><a href="{% url 'home' %}">Task List</a></p>
+
+{% endblock %}
